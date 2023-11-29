@@ -1,0 +1,29 @@
+@api = http://localhost:3000/api
+GET {{api}}/project
+###
+GET {{api}}//project/655bcd3cb4f466266512f65
+###
+POST {{api}}//save-project
+Content-Type: application/json
+
+{
+    "name": "Project 2",
+    "description": "Short project",
+    "category": "App",
+    "langs": [
+        "JavaScript",
+        "Kotlin",
+        "MySQL"
+    ],
+    "year": 2023
+}
+
+###
+DELETE {{api}}//delete-project/655d008bd61b4ea813bc63b5
+###
+PUT {{api}}//update-project/655bcd3cb4f466266512f656
+Content-Type: application/json
+
+{
+    "name": "Gaming Page - Group Project"
+}

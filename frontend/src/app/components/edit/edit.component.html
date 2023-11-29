@@ -1,0 +1,60 @@
+<div id="form-container">
+    <h2> {{title}} </h2>
+    
+    <span>
+        {{existProject}}
+    </span>
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)" action="" >
+        <div class="groupForm">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
+            <span *ngIf="name.touched && !name.valid">
+                El nombre es obligatorio
+            </span>
+        </div>
+        <div class="groupForm">
+            <label for="description">Descripción</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+            <span *ngIf="description.touched && !description.valid">
+                La descripción es obligatoria
+            </span>
+        </div>
+        <div class="groupForm">
+            <label for="category">Categoría</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required />
+            <span *ngIf="category.touched && !category.valid">
+                La categoria es obligatoria
+            </span>
+        </div>
+        <div class="groupForm">
+            <label for="langs">Lenguajes</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="langsSplit" required />
+            <span *ngIf="langs.touched && !langs.valid">
+                Los lenguajes son obligatorios, si necesitas poner mas de uno, separalos por espacios. Ej: MySQL Javascript
+            </span>
+        </div>
+        <div class="groupForm">
+            <label for="year">Año</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" required />
+            <span *ngIf="year.touched && !year.valid">
+                El año es obligatorio
+            </span>
+        </div>
+        <div class="groupForm">
+            <label for="image">Imagen</label>
+            <input type="file" name="image" #image="ngModel" class="file-input" [(ngModel)]="inputHolder" placeholder="Subir imagen" (change)="fileChange($event)">
+            <span *ngIf="image.touched && !image.valid">
+                La imagen es obligatoria
+            </span>
+        </div>
+        <input type="submit" class="btn" value="Enviar" [disabled]="!projectForm.form.valid">
+    </form>
+    
+    <span class="message success" *ngIf="status === 'success'">
+        El proyecto se ha actualizado correctamente. Puedes revisarlo en este link
+    </span>
+
+    <span class="message error" *ngIf="status === 'error'">
+        El proyecto no se ha actualizado. Vuelve a intentarlo 
+    </span>
+</div>

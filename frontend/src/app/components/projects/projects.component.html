@@ -1,0 +1,32 @@
+<div id="project-container">
+    <h2>Proyectos</h2>
+
+    <div class="projects-content" >
+        <div class="project" *ngFor="let project of projects">
+            <div class="img-container">
+                <img src="{{url+'get-image/'+project.img}} " alt="project image" *ngIf="project.img">
+            </div>
+            <h4 class="name">
+                {{project.name}}
+            </h4>
+            <span class="category"> 
+                {{project.category}}
+            </span>
+            <p class="description">
+                {{project.description}}
+            </p>
+            <div class="langs-container">
+                <span *ngFor="let lang of project.langs" class="langs">
+                    {{lang}}
+                </span>
+            </div>       
+            <span class="year">
+                {{project.year}}
+            </span>
+            <div class="edit-delete-container">
+                <a [routerLink]="['/editar-proyecto', project._id]" ><fa-icon [icon]="faPen" class="edit"></fa-icon></a>
+                <a (click)="deleteProject(project._id)"><fa-icon [icon]="faTrash" class="delete"></fa-icon></a>
+            </div>
+        </div>
+    </div>
+</div>

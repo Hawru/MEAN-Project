@@ -1,0 +1,24 @@
+<header>
+  <nav class="navbar">
+    <ul>
+      <li><a [routerLink]="['/sobre-mi']" routerLinkActive="link-active">Sobre mi</a></li>
+      <li><a [routerLink]="['/proyectos']" routerLinkActive="link-active">Proyectos</a></li>
+      <li class="logo"><a href="#">JV</a></li>
+      <li><a [routerLink]="['/crear-proyecto']" routerLinkActive="link-active">Crear proyecto</a></li>
+      <li><a [routerLink]="['/contacto']" routerLinkActive="link-active">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  <div>
+    Portfolio practice with NodeJS and Angular &copy;Julian Valencia
+  </div>
+</footer>
+
+
+

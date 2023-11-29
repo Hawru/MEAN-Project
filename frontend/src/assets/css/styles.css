@@ -1,0 +1,281 @@
+/* FONTS */
+@font-face{
+	font-family: "yanone";
+	src: url("fonts/yanone.ttf");
+}
+
+@font-face{
+	font-family: "finger";
+	src: url("fonts/finger.ttf");
+}
+/* VARIABLES */
+
+:root{
+    /* BG */
+    --headfoot-bg: #1b1b1b;
+    --hover-nav-bg: #868686;
+    --content-bg: rgba(211, 211, 211, 0.356);
+    /* TEXT */
+    --headfoot-text: #ccc;
+    --navbar-logo-hover: #fff;
+    --link-active-color: #727272;
+    --title: #111111;
+    --subtitle: #868686;
+    --advice-text: #5a0000;
+    --success-text: #0c6300;
+    /* CONFIG */
+    --max-width: 1320px;
+    /* ICON COLOR */
+    --del-color: #992c2c;
+    --edit-color: #d9721c;
+}
+/* GENERAL SETTINGS AND RESET */
+html{
+    font-size: 10px;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+	font-family: "yanone", Arial, Helvetica;
+	font-size: 2rem;
+	background: url("../img/pattern.png");
+	background-attachment: fixed;
+    line-height: 1.2;
+    letter-spacing: 0.2rem;
+}
+
+/* HEADER */
+
+header{
+    display: block;
+    width: 100%;
+    background-color: var(--headfoot-bg);
+}
+
+.navbar{
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    letter-spacing: 0.5rem;
+}
+
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 3rem;
+}
+
+.navbar li{
+    margin: 1rem 0;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.navbar a{
+    color: var(--headfoot-text);
+    display: block;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: all 300ms;
+}
+
+.navbar li:hover a{
+    background-color: var(--hover-nav-bg);
+    
+}
+
+.navbar .logo{
+    font-size: 4.2rem;
+    font-family: 'finger';
+}
+
+.navbar .logo a{
+    transition: all 300ms ease-in;
+}
+
+.navbar .logo:hover a{
+    background-color: transparent;
+    color: var(--navbar-logo-hover);
+    transform: scale(1.50);
+}
+.navbar .link-active{
+    color: var(--link-active-color);
+    pointer-events: none;
+    cursor: default;
+}
+
+.navbar li:hover .link-active{
+    background-color: transparent;
+}
+
+
+/* CONTENT */
+#content{
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--content-bg);
+    border-left: 1px solid var(--headfoot-bg);
+    border-right: 1px solid var(--headfoot-bg);
+    padding: 2rem 3rem;
+    min-height: 90vh;
+}
+
+/* FOOTER */
+
+footer{
+    background-color: var(--headfoot-bg);
+    width: 100%;
+    display: block;
+}
+
+footer div{
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    color: var(--headfoot-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+    opacity: 0.8;
+}
+
+/* THIS IS FOR FORM EDIT AND CREATE, BC THEY HAVE THE SAME STYLES */
+
+#form-container{
+    width: 70%;
+    text-align: center;
+    margin: 2rem auto 8rem auto;
+}
+
+#form-container h2{
+ margin: 0 auto;
+ text-align: center;
+ font-family: 'Finger';
+ font-size: 5.5rem;
+ border-bottom: 1px solid var(--headfoot-text);
+ padding-bottom: 1rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.groupForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.groupForm label{
+    text-align: start;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.groupForm textarea{
+    resize: none;
+    height: 4rem;
+}
+
+.groupForm input{
+    height: 2.5rem;
+}
+
+.groupForm input, .groupForm textarea{
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+
+}
+
+.groupForm .file-input{
+    width: fit-content;
+    padding: 0rem;
+}
+
+form .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    height: 4rem;
+    padding: 0.5rem 4rem;
+    width: fit-content;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 300ms;
+    border: 1px solid var(--headfoot-text);
+    cursor: pointer;
+}
+
+form .btn:hover{
+    background-color: var(--headfoot-text);
+    border: 1px solid var(--headfoot-bg);
+}
+
+.groupForm span{
+    font-size: 1.4rem;
+    color: var(--advice-text);
+    text-align: start;
+}
+
+form input[disabled] {
+    opacity: 0.7;
+}
+
+.message{
+    width: 60%;
+    margin: 1rem auto;
+    text-align: start;
+    font-size: 1.8rem;
+    display: block;
+}
+
+.success{
+    color: var(--success-text);
+}
+
+.error{
+    color: var(--advice-text);
+}

@@ -1,0 +1,44 @@
+#title{
+    width: 70%;
+    text-align: center;
+    margin: 2rem auto 8rem auto;
+}
+
+#title h1{
+    font-family: 'finger';
+    font-size: 6rem;
+    border-bottom: 1px solid var(--headfoot-text);
+    padding-bottom: 1rem;
+    color: var(--title);
+}
+
+#title h2{
+    padding-bottom: 1rem;
+    color: var(--subtitle);
+    font-size: 2.5rem;
+}
+
+#title p{
+    color: var(--title);
+    opacity: 0.6;
+}
+
+.about{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.about h2{
+    text-align: center;
+    font-size: 4.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--headfoot-text);
+}
+
+.about p{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 1rem;
+}
